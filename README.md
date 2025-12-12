@@ -108,12 +108,16 @@ constraints or probabilistic language models.  What is provided here
 is intended to serve as a minimum viable Markov text generator.  Any
 further enhancements are left as an exercise for the reader.
 
-Given the overwhelming popularity of large language models in 2025, it
-is worth noting that this approach bears little resemblance to LLMs.
-Markov text generators rely entirely on local word transition
-statistics and have no model of global structure or long range
-dependencies, whereas LLMs are trained on vast datasets using neural
-networks to model language patterns across much larger spans of text.
+Given the overwhelming popularity of large language models (LLMs) in
+2025, it is worth noting that this approach bears little resemblance
+to LLMs.  LLMs are trained on vast datasets using neural networks to
+model language patterns across large spans of text.  LLMs capture
+global structure and long range dependencies.  By contrast, Markov
+text generators rely entirely on local word transition statistics and
+have no model of global structure.  Despite these limitations, the
+Markov text generator shared in this project can serve as a simple and
+introduction to statistical language modelling.  After all, Markov
+chains can be thought of as the 'hello, world' of language models.
 
 
 Get Started
@@ -153,25 +157,25 @@ Here is a description of each argument:
 
   - `N`
 
-    The order of the Markov model. This value specifies how many
+    The order of the Markov model.  This value specifies how many
     consecutive words are used as the state when training the model.
     For example, a value of 2 builds a bigram model, while a value of
-    3 builds a trigram model. If not specified, this defaults to 2.
+    3 builds a trigram model.  If not specified, this defaults to 2.
 
   - `LENGTH`
 
-    The maximum number of words to generate. Generation may stop
+    The maximum number of words to generate.  Generation may stop
     earlier if the model reaches a state for which no continuation
-    exists. If not specified, this defaults to 100.
+    exists.  If not specified, this defaults to 100.
 
 
   - `PROMPT`
 
-    An optional starting prompt used to seed text generation. This
+    An optional starting prompt used to seed text generation.  This
     should be a single command line argument containing one or more
     words separated by spaces, so it must be quoted when invoking the
-    program. If provided, only the first N words of the prompt are
-    used. If omitted, generation starts from a random state in the
+    program.  If provided, only the first N words of the prompt are
+    used.  If omitted, generation starts from a random state in the
     model.
 
 Here are some usage examples of these command line arguments:
