@@ -1,5 +1,5 @@
-Mark V. Shaney
-==============
+Mark V. Shaney Gibberish Generator
+==================================
 
 This project is a minimal implementation of Mark V. Shaney in Python.
 Mark V. Shaney was a synthetic Usenet user that posted various
