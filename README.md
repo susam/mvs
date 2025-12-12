@@ -8,8 +8,8 @@ program.  See the Wikipedia article [Mark V. Shaney][mvs-wiki] for
 more details about it.
 
 The program [mvs.py][] available in this project consumes the content
-of the file [book.txt](book.txt), build an internal model and then use
-the model to generate gibberish.
+of the file [book.txt](book.txt), builds an internal model and then
+uses the model to generate gibberish.
 
 **[View Source][mvs.py]**
 
