@@ -1,8 +1,49 @@
 run:
-	python3 mvs.py
+	python3 mvs.py < book.txt
 
 prompt:
-	python3 mvs.py 2 100 'There is'
+	python3 mvs.py 2 100 'There is' < book.txt
+
+susam:
+	python3 mvs.py < susam.txt
+
+filter-website:
+	if ! [ -d /tmp/susam/ ]; then \
+	  git clone --depth 1 https://github.com/susam/susam.net.git /tmp/susam; \
+	fi
+	find /tmp/susam/content/ -name '*.html' \
+	  ! -path 'content/guestbook/guestbook.html' \
+	  ! -path '*/comments/*' \
+	  ! -path 'content/licence/mit.html' \
+	  -exec cat {} + | \
+	sed '\
+	  /<script>/,/<\/script>/d; \
+	  /<style>/,/<\/style>/d; \
+	' | \
+	tr -s ' \n' ' ' | \
+	sed ' \
+	  s/<[^>]*>//g; \
+	  s/&[mn]dash;/-/g; \
+	  s/&amp;/\&/g; \
+	  s/&gt;/>/g; \
+	  s/&lt;/</g; \
+	  s/&nbsp;/ /g; \
+	  s/\\(//g; \
+	  s/\\)//g; \
+	  s/\\\[//g; \
+	  s/\\\]//g; \
+	  s/\\begin{[^}]*}//g; \
+	  s/\\end{[^}]*}//g; \
+	  s/\\ge/>=/g; \
+	  s/\\gt/>/g; \
+	  s/\\in/in/g; \
+	  s/\\le/<=/g; \
+	  s/\\left(//g; \
+	  s/\\lt/</g; \
+	  s/\\mathbb{\(.*\)}/\1/g; \
+	  s/\\right)//g; \
+	  s/\\text{\(.*\)}/\1/g; \
+	' > susam.txt
 
 book:
 	curl -sSL -o dl.txt https://www.gutenberg.org/cache/epub/46/pg46.txt

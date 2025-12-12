@@ -3,6 +3,7 @@
 import random
 import sys
 
+
 type Key = tuple[str, ...]
 type Model = dict[Key, list[str]]
 
@@ -31,7 +32,7 @@ def generate(model: Model, length: int, prompt: Key) -> str:
 
 
 def main(n: int, length: int, prompt: Key) -> None:
-    model = train(open("book.txt").read(), n)
+    model = train(sys.stdin.read(), n)
     print(generate(model, length, prompt[:n]))
 
 
