@@ -25,7 +25,7 @@ Contents
 * [Commentary](#commentary)
 * [Get Started](#get-started)
 * [Command Line Arguments](#command-line-arguments)
-* [Gibberish Examples](#gibberish-examples)
+* [Gibberish](#gibberish-examples)
   * [Unprompted Gibberish](#unprompted-gibberish)
   * [Prompted Gibberish](#unprompted-gibberish)
   * [Personal Gibberish](#personal-gibberish)
@@ -210,8 +210,8 @@ Here are some usage examples of these command line arguments:
      ```
 
 
-Gibberish Examples
-------------------
+Gibberish
+---------
 
 
 ### Unprompted Gibberish
