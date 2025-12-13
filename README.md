@@ -26,6 +26,9 @@ Contents
 * [Get Started](#get-started)
 * [Command Line Arguments](#command-line-arguments)
 * [Gibberish Examples](#gibberish-examples)
+  * [Unprompted Gibberish](#unprompted-gibberish)
+  * [Prompted Gibberish](#unprompted-gibberish)
+  * [Personal Gibberish](#personal-gibberish)
 * [Licence](#licence)
 
 
@@ -210,6 +213,9 @@ Here are some usage examples of these command line arguments:
 Gibberish Examples
 ------------------
 
+
+### Unprompted Gibberish
+
 Here is an example of a gibberish produced by the program when no
 prompt was supplied:
 
@@ -226,6 +232,8 @@ as the figure-head of an old gentleman in a little and
 ```
 
 
+### Prompted Gibberish
+
 Here is an example of text generated from the initial prompt 'At
 last':
 
@@ -241,6 +249,9 @@ matched. Come into the most extravagant contortions: Scrooge's niece,
 indignantly. Bless those women; they never do anything by halves. They
 are all indescribable
 ```
+
+
+### Personal Gibberish
 
 Finally, I also ran the program on all posts I have written so far on
 my website at <https://susam.net/>.  Here is what it generated:

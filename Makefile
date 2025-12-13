@@ -32,17 +32,20 @@ filter-website:
 	  s/\\)//g; \
 	  s/\\\[//g; \
 	  s/\\\]//g; \
+	  s/\\{/{/g; \
+	  s/\\}/}/g; \
 	  s/\\begin{[^}]*}//g; \
 	  s/\\end{[^}]*}//g; \
 	  s/\\ge/>=/g; \
 	  s/\\gt/>/g; \
 	  s/\\in/in/g; \
+	  s/\\ldots/.../g; \
 	  s/\\le/<=/g; \
 	  s/\\left(//g; \
 	  s/\\lt/</g; \
-	  s/\\mathbb{\(.*\)}/\1/g; \
+	  s/\\mathbb{\([^}]*\)}/\1/g; \
 	  s/\\right)//g; \
-	  s/\\text{\(.*\)}/\1/g; \
+	  s/\\text{\([^}]\)}/\1/g; \
 	' > susam.txt
 
 book:
