@@ -44,7 +44,6 @@ Here is the complete source code of the gibberish generator
 import random
 import sys
 
-
 type Key = tuple[str, ...]
 type Model = dict[Key, list[str]]
 

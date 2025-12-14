@@ -58,7 +58,7 @@ wc:
 lint: readme
 	python3 -m venv venv/
 	venv/bin/pip3 install ruff mypy
-	venv/bin/ruff check --select ALL --ignore ANN001,D100,D103,D211,D213,F401,I001,PLR2004,PTH123,S311,SIM115,T201 mvs
+	venv/bin/ruff check --select ALL --ignore D100,D103,D211,D213,PLR2004,S311,T201 mvs
 	venv/bin/ruff format --diff mvs
 	venv/bin/mypy mvs
 
@@ -75,6 +75,7 @@ push:
 	git remote remove cb || :
 	git remote add origin git@github.com:susam/mvs.git
 	git remote add cb git@codeberg.org:susam/mvs.git
+	git push -u origin main
 	git push origin --all
 	git push origin --tags
 	git push cb --all
