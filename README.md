@@ -25,7 +25,7 @@ Contents
 * [Commentary](#commentary)
 * [Get Started](#get-started)
 * [Command Line Arguments](#command-line-arguments)
-* [Gibberish](#gibberish-examples)
+* [Gibberish](#gibberish)
   * [Unprompted Gibberish](#unprompted-gibberish)
   * [Prompted Gibberish](#unprompted-gibberish)
   * [Personal Gibberish](#personal-gibberish)
