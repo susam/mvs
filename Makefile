@@ -67,3 +67,15 @@ readme:
 	cat mvs >> tmp.md
 	sed -n '/^```$$/,$$p' README.md >> tmp.md
 	mv tmp.md README.md
+
+REPO = mvs
+
+push:
+	git remote remove origin
+	git remote remove cb
+	git remote add origin git@github.com:susam/mvs.git
+	git remote add origin git@codeberg.org:susam/mvs.git
+	git push origin --all
+	git push origin --tags
+	git push cb --all
+	git push cb --tags
