@@ -1,11 +1,11 @@
 run:
-	python3 mvs.py < book.txt
+	./mvs < book.txt
 
 prompt:
-	python3 mvs.py 2 100 'There is' < book.txt
+	./mvs 2 100 'There is' < book.txt
 
 susam:
-	python3 mvs.py < susam.txt
+	./mvs < susam.txt
 
 filter-website:
 	if ! [ -d /tmp/susam/ ]; then \
@@ -53,17 +53,17 @@ book:
 	sed -n '/START OF .* GUTENBERG/,/END OF .* GUTENBERG/p' dl.txt | sed '1d;$d' > book.txt
 
 wc:
-	grep '[[:graph:]]' mvs.py | grep -v '^#' | wc -l
+	grep '[[:graph:]]' mvs | grep -v '^#' | wc -l
 
 lint: readme
 	python3 -m venv venv/
 	venv/bin/pip3 install ruff mypy
-	venv/bin/ruff check --select ALL --ignore ANN001,D100,D103,D211,D213,F401,I001,PLR2004,PTH123,S311,SIM115,T201
-	venv/bin/ruff format --diff
-	venv/bin/mypy .
+	venv/bin/ruff check --select ALL --ignore ANN001,D100,D103,D211,D213,F401,I001,PLR2004,PTH123,S311,SIM115,T201 mvs
+	venv/bin/ruff format --diff mvs
+	venv/bin/mypy mvs
 
 readme:
 	sed -n '1,/^```python3$$/p' README.md > tmp.md
-	cat mvs.py >> tmp.md
+	cat mvs >> tmp.md
 	sed -n '/^```$$/,$$p' README.md >> tmp.md
 	mv tmp.md README.md
